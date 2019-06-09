@@ -1,0 +1,14 @@
+.table {
+  max-width: 100%;
+  overflow-y: auto;
+}
+
+.table-cell {
+  white-space: nowrap;
+}
+
+.sticky-cell {
+  position: sticky;
+  background: white;
+  left: 0;
+}

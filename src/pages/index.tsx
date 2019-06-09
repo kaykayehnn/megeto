@@ -1,3 +1,12 @@
-import React from "react"
+import React, { FunctionComponent } from "react"
 
-export default () => <div>Hello world!</div>
+import Layout from "@Components/Layout"
+import Home from "@Components/Home"
+
+const Index: FunctionComponent = () => (
+  <Layout location="/">
+    <Home />
+  </Layout>
+)
+
+export default Index

@@ -1,0 +1,52 @@
+.hero-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 40vh;
+  max-height: 600px;
+  color: #ffffff;
+  background: url("/images/IMG_5886_3_compressed_q50.jpg");
+  background-size: cover;
+  background-position: 50%;
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  right: 0;
+  bottom: 0;
+}
+
+.hero-title {
+  margin: 0;
+  padding: auto 1.5em;
+  font-size: 1.45em;
+  text-align: center;
+  user-select: none;
+  z-index: 1;
+}
+
+@media screen and (max-width: 620px) {
+  .hero-title > h1 {
+    font-size: 2.25rem;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .hero-title > h1 {
+    font-size: 1.65rem;
+  }
+}
+
+.hero-title-first {
+  margin-bottom: 0.1em;
+}
+
+.news-container {
+  margin: 0 auto;
+  max-width: 1280px;
+}

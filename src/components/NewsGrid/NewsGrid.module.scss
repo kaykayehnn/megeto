@@ -1,0 +1,16 @@
+.news-title {
+  margin-bottom: 0.8em;
+}
+
+.news {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+  grid-gap: 1em;
+  flex-wrap: wrap;
+  justify-items: center;
+}
+
+.card {
+  min-width: 240px;
+  max-width: 400px;
+}

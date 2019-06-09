@@ -10,6 +10,8 @@ if (process.env.NODE_ENV !== "production") require("dotenv").config()
 module.exports = {
   plugins: [
     "gatsby-plugin-typescript",
+    "gatsby-plugin-sass",
+    "gatsby-plugin-svgr",
     /*
      * Gatsby's data processing layer begins with “source”
      * plugins. Here the site sources its data from Wordpress.

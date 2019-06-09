@@ -1,0 +1,21 @@
+/* Removes margin */
+html,
+body {
+  margin: 0;
+}
+
+/* Overrides box-sizing */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  font-family: "Roboto";
+}
