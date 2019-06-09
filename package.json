@@ -13,11 +13,19 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "@material-ui/core": "^4.0.2",
+    "@material-ui/icons": "^4.0.1",
+    "classnames": "^2.2.6",
+    "d3-dsv": "^1.1.1",
     "gatsby": "^2.8.6",
+    "gatsby-plugin-typescript": "^2.0.15",
+    "gatsby-source-wordpress": "^3.0.64",
+    "lodash-es": "^4.17.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "dotenv": "^8.0.0",
     "prettier": "^1.18.0"
   },
   "repository": {
