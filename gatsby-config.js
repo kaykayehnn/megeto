@@ -8,9 +8,29 @@ if (process.env.NODE_ENV !== "production") require("dotenv").config()
 
 // In your gatsby-config.js
 module.exports = {
+  siteMetadata: {
+    schoolType: process.env.SCHOOL_TYPE,
+    schoolName: process.env.SCHOOL_NAME,
+  },
   plugins: [
+    {
+      resolve: "gatsby-plugin-material-ui",
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-layout",
+      options: {
+        component: require.resolve("./src/components/Layout/index.ts"),
+      },
+    },
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-typescript",
     "gatsby-plugin-sass",
+    "gatsby-plugin-remove-trailing-slashes",
     "gatsby-plugin-svgr",
     /*
      * Gatsby's data processing layer begins with “source”
