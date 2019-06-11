@@ -48,6 +48,7 @@ const Article: FunctionComponent<ArticleProps> = ({ data }) => {
                 variant: "h3",
                 component: "h1",
                 gutterBottom: true,
+                className: styles.title,
               }}
               subheader={post.date}
             />
