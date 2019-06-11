@@ -17,6 +17,7 @@
     "jsx": "preserve",
     "paths": {
       "@Components/*": ["./components/*"],
+      "@Hooks/*": ["./hooks/*"],
       "@Vectors/*": ["../static/vectors/*"]
     }
   },

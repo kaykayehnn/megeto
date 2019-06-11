@@ -1,0 +1,527 @@
+[
+  [
+    "Директор",
+    [
+      {
+        "id": "1",
+        "name": "Веселина Карапеева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Зам. Директор",
+    [
+      {
+        "id": "7",
+        "name": "Алина Сомова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "3",
+        "name": "Ганка Петрова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "5",
+        "name": "Ирена Душкова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "39",
+        "name": "Лалка Лилова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Психолог",
+    [
+      {
+        "id": "85",
+        "name": "Пламена Борисова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Педалогически съветник",
+    [
+      {
+        "id": "6",
+        "name": "Любомира Димитрова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Български език и литература",
+    [
+      {
+        "id": "8",
+        "name": "Бистра Иванова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "9",
+        "name": "Здравка Гайдаджиева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "10",
+        "name": "д-р Невена Ичевска",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "11",
+        "name": "Павлин Бакалов",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "12",
+        "name": "д-р Пенчо Раянов",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "13",
+        "name": "д-р Милена Видралска",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "14",
+        "name": "д-р Шинка Дичева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "15",
+        "name": "Петър Спасов",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Английски език",
+    [
+      {
+        "id": "16",
+        "name": "Дани Симеонова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "17",
+        "name": "Атанаска Мерджанова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "18",
+        "name": "Веселина Петрова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "4",
+        "name": "Гергана Петрова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "19",
+        "name": "Димка Цоковска",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "20",
+        "name": "Емилия Трифонова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "21",
+        "name": "Илиан Друмев",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "22",
+        "name": "Калинка Николова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "23",
+        "name": "Лилия Неделева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "24",
+        "name": "Стоянка Дермеджиева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "25",
+        "name": "Тодорка Донова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "26",
+        "name": "Христинка Минчева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "27",
+        "name": "Цветелин Цветков",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Немски език",
+    [
+      {
+        "id": "28",
+        "name": "Василка Цвяткова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "29",
+        "name": "Галина Ганчева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "30",
+        "name": "Мирослава Йовкова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Френски език",
+    [
+      {
+        "id": "31",
+        "name": "Невена Маринова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Математика",
+    [
+      {
+        "id": "32",
+        "name": "Наталия Хубчева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "33",
+        "name": "Васил Симеонов",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "34",
+        "name": "Виолета Вазова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "35",
+        "name": "Дафинка Андреева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "36",
+        "name": "Димитринка Огнянова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "37",
+        "name": "Елка Вълканова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "38",
+        "name": "Кремена Симеонова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "40",
+        "name": "Лидия Трупчева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "41",
+        "name": "Николинка Бъчварова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "42",
+        "name": "Петя Велкова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "43",
+        "name": "Радка Златанова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "44",
+        "name": "Татяна Мерджанова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "45",
+        "name": "Христина Златанова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Физика и астрономия",
+    [
+      {
+        "id": "46",
+        "name": "Боряна Генева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "47",
+        "name": "Илиана Иванова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Химия и ООС",
+    [
+      {
+        "id": "48",
+        "name": "Валентина Иванова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "49",
+        "name": "Емилия Иванова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Биология и ЗО",
+    [
+      {
+        "id": "50",
+        "name": "Ангел Панайотов",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "51",
+        "name": "Атанаска Мухтарева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "87",
+        "name": "Стойна Николова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "История и цивилизация",
+    [
+      {
+        "id": "52",
+        "name": "Атанаска Колева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "53",
+        "name": "Катя Белкинова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "2",
+        "name": "Румен Иванов",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "География и икономика",
+    [
+      {
+        "id": "54",
+        "name": "Камен Джамбазов",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "55",
+        "name": "Мария Томова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Философски цикъл",
+    [
+      {
+        "id": "56",
+        "name": "Петя Михова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "57",
+        "name": "Росица Антонова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Музика",
+    [
+      {
+        "id": "58",
+        "name": "Мария Панева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Изобразително изкуство",
+    [
+      {
+        "id": "59",
+        "name": "Ваня Шипчанова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "60",
+        "name": "Милена Бочукова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "61",
+        "name": "Павлина Тотева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "62",
+        "name": "Румен Манолов",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Информатика",
+    [
+      {
+        "id": "63",
+        "name": "Бистра Танева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "64",
+        "name": "Виолета Маринова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "65",
+        "name": "Гергина Гешева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "66",
+        "name": "Дарина Брънчева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "67",
+        "name": "Живко Радев",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "68",
+        "name": "Иван Илиев",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "69",
+        "name": "Йорданка Тръмбева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "70",
+        "name": "Лиляна Русенова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "71",
+        "name": "Магдалена Златанова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "72",
+        "name": "Мария Василева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "73",
+        "name": "Недялка Кузева",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "74",
+        "name": "Пепа Илкова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "75",
+        "name": "Росен Вълчев",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "76",
+        "name": "Хриси Плачкова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "77",
+        "name": "д-р Цветана Димитрова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "78",
+        "name": "д-р Янислав Картелов",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ],
+  [
+    "Физкултура и спорт",
+    [
+      {
+        "id": "79",
+        "name": "Антон Илков",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "80",
+        "name": "Асен Попов",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "81",
+        "name": "Вержиния Гарабедян",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "82",
+        "name": "Галина Серафимова",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "83",
+        "name": "Георги Найденов",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      },
+      {
+        "id": "84",
+        "name": "Недко Каблешков",
+        "photoUrl": "/images/vasil_simeonov_compressed.jpg"
+      }
+    ]
+  ]
+]
