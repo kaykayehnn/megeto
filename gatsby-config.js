@@ -32,6 +32,14 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-remove-trailing-slashes",
     "gatsby-plugin-svgr",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "data",
+        path: `${__dirname}/data/`,
+      },
+    },
+    "gatsby-transformer-json",
     /*
      * Gatsby's data processing layer begins with “source”
      * plugins. Here the site sources its data from Wordpress.
