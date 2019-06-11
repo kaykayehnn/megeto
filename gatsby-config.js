@@ -93,10 +93,6 @@ module.exports = {
             return e
           })
 
-          require("fs").writeFileSync(
-            "data.json",
-            JSON.stringify(transformed, null, 2)
-          )
           return transformed
         },
       },

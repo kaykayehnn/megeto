@@ -8,11 +8,8 @@ import {
   Card,
   CardHeader,
   Avatar,
-  CardMedia,
   CardContent,
   CardActions,
-  Button,
-  Link,
 } from "@material-ui/core"
 import { Helmet } from "react-helmet"
 
@@ -35,53 +32,47 @@ const Article: FunctionComponent<ArticleProps> = ({ data }) => {
         <title>{post.title}</title>
         <meta name="description" content={post.excerpt} />
       </Helmet>
-    <Content maxWidth="760px">
-      <article>
-        <Card>
-          <CardHeader
-            avatar={
-              <Avatar
-                src={post.author.avatar_urls.wordpress_96}
-                alt="Author"
-                className={styles.avatar}
-              />
-            }
-            title={post.title}
-            titleTypographyProps={{
-              variant: "h3",
-              component: "h1",
-              gutterBottom: true,
-            }}
-            subheader={post.date}
-            // className={styles.header}
-          />
-          <img
-            src={post.featured_media.source_url}
-            alt={post.featured_media.alt_text}
-            className={styles.image}
-          />
-          <CardContent>
-            {post.paragraphs.map(p => (
-              <Typography
-                key={p}
-                variant="body1"
-                component="p"
-                gutterBottom
-                className={styles.paragraph}
-              >
-                {p}
-              </Typography>
-            ))}
-          </CardContent>
-          <CardActions>
-            {/* <Button component={Link} to={pathname} className={styles.actions}>
-            <ChevronRightIcon />
-            Виж повече
-          </Button> */}
-          </CardActions>
-        </Card>
-      </article>
-    </Content>
+      <Content maxWidth="760px">
+        <article>
+          <Card>
+            <CardHeader
+              avatar={
+                <Avatar
+                  src={post.author.avatar_urls.wordpress_96}
+                  alt="Author"
+                  className={styles.avatar}
+                />
+              }
+              title={post.title}
+              titleTypographyProps={{
+                variant: "h3",
+                component: "h1",
+                gutterBottom: true,
+              }}
+              subheader={post.date}
+            />
+            <img
+              src={post.featured_media.source_url}
+              alt={post.featured_media.alt_text}
+              className={styles.image}
+            />
+            <CardContent>
+              {post.paragraphs.map(p => (
+                <Typography
+                  key={p}
+                  variant="body1"
+                  component="p"
+                  gutterBottom
+                  className={styles.paragraph}
+                >
+                  {p}
+                </Typography>
+              ))}
+            </CardContent>
+            <CardActions />
+          </Card>
+        </article>
+      </Content>
     </>
   )
 }

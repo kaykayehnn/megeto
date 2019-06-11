@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react"
 
 import styles from "./WIP.module.scss"
 import Content from "@Components/Content"
-import { Paper, Typography } from "@material-ui/core"
+import { Typography } from "@material-ui/core"
 
 export interface WIPProps {}
 

@@ -1,5 +1,4 @@
-import React, { FunctionComponent, useMemo, useState } from "react"
-import { csvParse } from "d3-dsv"
+import React, { FunctionComponent, useState } from "react"
 import {
   Typography,
   Tabs,
@@ -14,8 +13,6 @@ import {
 
 import styles from "./Schedule.module.scss"
 import Content from "@Components/Content"
-import ScheduleType from "types/Schedule"
-import HashTable from "types/HashTable"
 import { Helmet } from "react-helmet"
 
 const DAYS = ["Понеделник", "Вторник", "Сряда", "Четвъртък", "Петък"]
