@@ -16,7 +16,7 @@ const TeacherCard: FunctionComponent<TeacherCardProps> = ({
       <CardHeader
         avatar={<Avatar src={photoUrl} alt={name} className={styles.avatar} />}
         title={name}
-        titleTypographyProps={{ className: styles.teacherName }}
+        titleTypographyProps={{ variant: "h5" }}
       />
     </Card>
   )
