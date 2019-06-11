@@ -62,7 +62,9 @@ const Schedule: FunctionComponent<ScheduleProps> = props => {
         <title>Програма</title>
       </Helmet>
       <Content>
-        <Typography variant="h1">Програма</Typography>
+        <Typography variant="h1" gutterBottom>
+          Програма
+        </Typography>
         <Tabs
           value={dayIndex}
           variant={scrollableTabs ? "scrollable" : "fullWidth"}
