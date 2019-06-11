@@ -6,3 +6,21 @@
 .content {
   margin: 2em 4em;
 }
+
+@media screen and (max-width: 640px) {
+  .content {
+    margin: 2em 3em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content {
+    margin: 2em;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .content {
+    margin: 2em 1em;
+  }
+}

@@ -1,13 +1,17 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent } from "react"
 
-import styles from './Content.module.scss'
+import styles from "./Content.module.scss"
 
-export interface ContentProps {}
+export interface ContentProps {
+  maxWidth?: string
+}
 
-const Content: FunctionComponent<ContentProps> = ({ children }) => {
+const Content: FunctionComponent<ContentProps> = ({ children, maxWidth }) => {
   return (
     <div className={styles.content}>
-      <div className={styles.container}>{children}</div>
+      <div style={{ maxWidth }} className={styles.container}>
+        {children}
+      </div>
     </div>
   )
 }

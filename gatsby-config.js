@@ -5,6 +5,7 @@
  */
 
 const sanitizeHtml = require("sanitize-html")
+const cyrillicToLatin = require("./config/cyrillic-to-latin")
 
 if (process.env.WORDPRESS_USER == null) require("dotenv").config()
 
@@ -71,22 +72,31 @@ module.exports = {
           wpcom_pass: process.env.WORDPRESS_PASSWORD,
         },
         normalizer: ({ entities }) => {
+          const paragraphRgx = /<p>(.+?)<\/p>/g
+
           const transformed = entities.map(e => {
             if (e.__type === "wordpress__POST") {
               e.excerpt = sanitizeHtml(e.excerpt, {
                 allowedTags: [],
               })
+              // Split content to an array of paragraphs
+              e.paragraphs = sanitizeHtml(e.content, { allowedTags: ["p"] })
+                .match(paragraphRgx)
+                .map(m => m.slice(3, -4))
               e.content = sanitizeHtml(e.content, { allowedTags: [] })
+
               e.title = e.title.replace("&nbsp;", " ")
+              e.path = cyrillicToLatin(decodeURIComponent(e.path))
+              e.slug = cyrillicToLatin(decodeURIComponent(e.slug))
             }
 
             return e
           })
 
-          // require("fs").writeFileSync(
-          //   "data.json",
-          //   JSON.stringify(transformed, null, 2)
-          // )
+          require("fs").writeFileSync(
+            "data.json",
+            JSON.stringify(transformed, null, 2)
+          )
           return transformed
         },
       },

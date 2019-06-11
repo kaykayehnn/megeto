@@ -1,0 +1,35 @@
+const letterMap = {
+  а: "a",
+  б: "b",
+  в: "v",
+  г: "g",
+  д: "d",
+  е: "e",
+  ж: "zh",
+  з: "z",
+  и: "i",
+  й: "i",
+  к: "k",
+  л: "l",
+  м: "m",
+  н: "n",
+  о: "o",
+  п: "p",
+  р: "r",
+  с: "s",
+  т: "t",
+  у: "u",
+  ф: "f",
+  х: "h",
+  ц: "c",
+  ч: "ch",
+  ш: "sh",
+  щ: "sht",
+  ъ: "y",
+  ю: "yu",
+  я: "ya",
+}
+
+module.exports = function cyrillicToLatin(string) {
+  return string.replace(/[а-я]/gi, m => letterMap[m])
+}

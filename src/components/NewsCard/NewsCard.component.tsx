@@ -17,36 +17,40 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight"
 
 export interface NewsCardProps {
   title: string
+  date: string
   avatarUrl: string
-  summary: string
+  excerpt: string
   imageUrl: string
   className: string
-  pathname: string
+  path: string
 }
 
+// TODO: react helmet tags
 const NewsCard: FunctionComponent<NewsCardProps> = ({
   title,
+  date,
   avatarUrl,
-  summary,
+  excerpt,
   imageUrl,
   className,
-  pathname,
+  path: pathname,
 }) => {
   return (
     <Card className={className}>
       <CardHeader
         avatar={<Avatar src={avatarUrl} />}
         title={title}
-        subheader="September 14, 2016"
+        subheader={date}
         className={styles.header}
       />
       <CardMedia className={styles.image} image={imageUrl} />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          {summary}
+          {excerpt}
         </Typography>
       </CardContent>
       <CardActions>
+        {/* TODO: align to bottom */}
         <Button component={Link} to={pathname} className={styles.actions}>
           <ChevronRightIcon />
           Виж повече
