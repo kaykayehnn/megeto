@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react"
+import classnames from "classnames"
 
 import styles from "./NewsCard.module.scss"
 import {
@@ -35,7 +36,7 @@ const NewsCard: FunctionComponent<NewsCardProps> = ({
   path: pathname,
 }) => {
   return (
-    <Card className={className}>
+    <Card className={classnames(styles.card, className)}>
       <CardHeader
         avatar={<Avatar src={avatarUrl} />}
         title={title}
@@ -48,9 +49,13 @@ const NewsCard: FunctionComponent<NewsCardProps> = ({
           {excerpt}
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions className={styles.actions}>
         {/* TODO: align to bottom */}
-        <Button component={Link} to={pathname} className={styles.actions}>
+        <Button
+          component={Link}
+          to={pathname}
+          className={styles.readMoreButton}
+        >
           <ChevronRightIcon />
           Виж повече
         </Button>

@@ -1,9 +1,18 @@
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   // Height when title is 3 lines
   min-height: 112px;
 }
 
 .actions {
+  margin-top: auto;
+}
+
+.read-more-button {
   margin-left: auto;
   margin-right: 0.5em;
 }
