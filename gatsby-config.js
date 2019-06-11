@@ -4,13 +4,15 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-if (process.env.NODE_ENV !== "production") require("dotenv").config()
+const sanitizeHtml = require("sanitize-html")
+
+if (process.env.WORDPRESS_USER == null) require("dotenv").config()
 
 // In your gatsby-config.js
 module.exports = {
   siteMetadata: {
-    schoolType: process.env.SCHOOL_TYPE,
-    schoolName: process.env.SCHOOL_NAME,
+    schoolType: "Математическа Гимназия",
+    schoolName: "Академик Кирил Попов",
   },
   plugins: [
     {
@@ -30,7 +32,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-typescript",
     "gatsby-plugin-sass",
-    "gatsby-plugin-remove-trailing-slashes",
     "gatsby-plugin-svgr",
     {
       resolve: "gatsby-source-filesystem",
@@ -68,6 +69,25 @@ module.exports = {
           wpcom_app_clientId: "65941",
           wpcom_user: process.env.WORDPRESS_USER,
           wpcom_pass: process.env.WORDPRESS_PASSWORD,
+        },
+        normalizer: ({ entities }) => {
+          const transformed = entities.map(e => {
+            if (e.__type === "wordpress__POST") {
+              e.excerpt = sanitizeHtml(e.excerpt, {
+                allowedTags: [],
+              })
+              e.content = sanitizeHtml(e.content, { allowedTags: [] })
+              e.title = e.title.replace("&nbsp;", " ")
+            }
+
+            return e
+          })
+
+          // require("fs").writeFileSync(
+          //   "data.json",
+          //   JSON.stringify(transformed, null, 2)
+          // )
+          return transformed
         },
       },
     },
