@@ -14,6 +14,7 @@ import {
   Button,
   Link,
 } from "@material-ui/core"
+import { Helmet } from "react-helmet"
 
 export interface ArticleProps {
   data: {
@@ -29,6 +30,11 @@ const Article: FunctionComponent<ArticleProps> = ({ data }) => {
   const post = data.allWordpressPost.edges[0].node
 
   return (
+    <>
+      <Helmet>
+        <title>{post.title}</title>
+        <meta name="description" content={post.excerpt} />
+      </Helmet>
     <Content maxWidth="760px">
       <article>
         <Card>
@@ -76,6 +82,7 @@ const Article: FunctionComponent<ArticleProps> = ({ data }) => {
         </Card>
       </article>
     </Content>
+    </>
   )
 }
 

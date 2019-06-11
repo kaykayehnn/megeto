@@ -6,6 +6,7 @@ import Content from "@Components/Content"
 import NewsGrid from "@Components/NewsGrid"
 import useSiteMeta from "@Hooks/useSiteMeta"
 import Article from "types/Article"
+import { Helmet } from "react-helmet"
 
 export interface HomeProps {
   data: {
@@ -22,19 +23,26 @@ const Home: FunctionComponent<HomeProps> = props => {
   const news = props.data.allWordpressPost.edges.map(p => p.node)
 
   return (
-    <div>
-      <div className={styles.heroImage}>
-        <div className={styles.heroTitle}>
-          <Typography variant="h1" className={styles.heroTitleFirst}>
-            {schoolType}
-          </Typography>
-          <Typography variant="h1">&quot;{schoolName}&quot;</Typography>
+    <>
+      <Helmet>
+        <title>
+          {schoolType} "{schoolName}"
+        </title>
+      </Helmet>
+      <div>
+        <div className={styles.heroImage}>
+          <div className={styles.heroTitle}>
+            <Typography variant="h1" className={styles.heroTitleFirst}>
+              {schoolType}
+            </Typography>
+            <Typography variant="h1">"{schoolName}"</Typography>
+          </div>
         </div>
+        <Content>
+          <NewsGrid news={news} />
+        </Content>
       </div>
-      <Content>
-        <NewsGrid news={news} />
-      </Content>
-    </div>
+    </>
   )
 }
 

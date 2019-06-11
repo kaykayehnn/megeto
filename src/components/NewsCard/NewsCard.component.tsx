@@ -25,7 +25,6 @@ export interface NewsCardProps {
   path: string
 }
 
-// TODO: react helmet tags
 const NewsCard: FunctionComponent<NewsCardProps> = ({
   title,
   date,

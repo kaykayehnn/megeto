@@ -16,6 +16,7 @@ import styles from "./Schedule.module.scss"
 import Content from "@Components/Content"
 import ScheduleType from "types/Schedule"
 import HashTable from "types/HashTable"
+import { Helmet } from "react-helmet"
 
 const DAYS = ["Понеделник", "Вторник", "Сряда", "Четвъртък", "Петък"]
 
@@ -56,6 +57,10 @@ const Schedule: FunctionComponent<ScheduleProps> = props => {
   ]
 
   return (
+    <>
+      <Helmet>
+        <title>Програма</title>
+      </Helmet>
     <Content>
       <Typography variant="h1">Програма</Typography>
       <Tabs
@@ -95,6 +100,7 @@ const Schedule: FunctionComponent<ScheduleProps> = props => {
         </Table>
       </Paper>
     </Content>
+    </>
   )
 }
 

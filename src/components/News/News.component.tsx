@@ -4,6 +4,7 @@ import styles from "./News.module.scss"
 import Content from "@Components/Content"
 import NewsGrid from "@Components/NewsGrid"
 import Article from "types/Article"
+import { Helmet } from "react-helmet"
 
 export interface NewsProps {
   data: {
@@ -19,9 +20,14 @@ const News: FunctionComponent<NewsProps> = props => {
   const news = props.data.allWordpressPost.edges.map(p => p.node)
 
   return (
-    <Content>
-      <NewsGrid news={news} />
-    </Content>
+    <>
+      <Helmet>
+        <title>Новини</title>
+      </Helmet>
+      <Content>
+        <NewsGrid news={news} />
+      </Content>
+    </>
   )
 }
 

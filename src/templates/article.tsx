@@ -10,6 +10,7 @@ export const query = graphql`
           date(locale: "bg", formatString: "D MMM YYYY")
           paragraphs
           path
+          excerpt
           author {
             name
             avatar_urls {
