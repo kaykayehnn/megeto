@@ -28,7 +28,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: node.path,
       component: path.resolve("./src/templates/article.tsx"),
       context: {
-        path: node.path,
+        // path is reserved for Gatsby
+        pathname: node.path,
       },
     })
   })

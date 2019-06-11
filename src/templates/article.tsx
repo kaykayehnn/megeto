@@ -2,8 +2,8 @@ import Article from "@Components/Article"
 import { graphql } from "gatsby"
 
 export const query = graphql`
-  query article($path: String!) {
-    allWordpressPost(filter: { path: { eq: $path } }) {
+  query article($pathname: String!) {
+    allWordpressPost(filter: { path: { eq: $pathname } }) {
       edges {
         node {
           title
