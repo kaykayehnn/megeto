@@ -8,7 +8,7 @@ export interface WIPProps {}
 
 const WIP: FunctionComponent<WIPProps> = () => {
   return (
-    <Content>
+    <Content maxWidth="1080px">
       <div style={{ padding: "0.5em" }}>
         <Typography variant="h2" align="center" gutterBottom>
           Under construction
