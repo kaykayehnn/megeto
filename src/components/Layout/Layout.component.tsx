@@ -1,5 +1,5 @@
-import React, { FunctionComponent, useState } from "react"
-import { ThemeProvider, StylesProvider } from "@material-ui/styles"
+import React, { FunctionComponent, useReducer } from "react"
+import { ThemeProvider } from "@material-ui/styles"
 import {
   createMuiTheme,
   AppBar,
@@ -17,46 +17,47 @@ import MenuIcon from "@material-ui/icons/Menu"
 import HomeIcon from "@material-ui/icons/HomeOutlined"
 import SchoolIcon from "@material-ui/icons/SchoolOutlined"
 import InfoIcon from "@material-ui/icons/InfoOutlined"
-import AndroidIcon from "@material-ui/icons/AndroidOutlined"
 import ScheduleIcon from "@material-ui/icons/Schedule"
 import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder"
+import NewReleasesIcon from "@material-ui/icons/NewReleasesOutlined"
 import { Link } from "gatsby"
 
 import { ReactComponent as Logo } from "@Vectors/logo.svg"
 
 import styles from "./Layout.module.scss"
 import "./global.css"
+import useSiteMeta from "@Hooks/useSiteMeta"
 
 const MENUS = [
   {
     text: "Начало",
     Icon: HomeIcon,
-    pathname: "/",
+    to: "/",
   },
   {
     text: "За гимназията",
-    Icon: SchoolIcon,
-    pathname: "/about",
+    Icon: InfoIcon,
+    to: "/about/",
   },
   {
     text: "Новини",
-    Icon: InfoIcon,
-    pathname: "/news",
+    Icon: NewReleasesIcon,
+    to: "/news/",
   },
   {
     text: "Колектив",
-    Icon: AndroidIcon,
-    pathname: "/collective",
+    Icon: SchoolIcon,
+    to: "/collective/",
   },
   {
     text: "Програма",
     Icon: ScheduleIcon,
-    pathname: "/schedule",
+    to: "/schedule/",
   },
   {
     text: "Документи",
     Icon: BookmarkBorderIcon,
-    pathname: "/documents",
+    to: "/documents/",
   },
 ]
 
@@ -84,74 +85,132 @@ const theme = createMuiTheme({
   },
 })
 
+export interface DrawerState {
+  isOpen: boolean
+  lastPathname?: string
+}
+
+export type DrawerActionType = "TOGGLE" | "CLOSE" | "NAVIGATE"
+
+export interface DrawerAction {
+  type: DrawerActionType
+  pathname: string
+}
+
+// When a drawer link initiates navigation via Gatsby's Link component, it
+// needs some time to fetch its data. If the request resolves druing
+// transitioning the drawer to a closed state, the Layout component rerenders
+// and thus the Transition component receives the following sequence of props:
+// 1) open (before clicking a link)
+// 2) closed (synchronous, as the link is clicked)
+// 3) closed (async, when promise resolves)
+//
+// This ends the transition prematurely, which in turn results in flickering.
+// To work around this issue, we keep the drawer open until the data resolves.
+// As soon as it does, we check if current location (from props) is different
+// from the previous location, stored in this reducer's state. Only then we
+// fire the close transition and update the location for later navigations.
+// To give feedback to the user that a navigation is in progress, we update the
+// drawer to reflect future location.
+function drawerReducer(state: DrawerState, action: DrawerAction): DrawerState {
+  switch (action.type) {
+    case "TOGGLE":
+      return {
+        isOpen: !state.isOpen,
+        lastPathname: action.pathname,
+      }
+    case "CLOSE":
+      return {
+        isOpen: false,
+        lastPathname: action.pathname,
+      }
+    case "NAVIGATE":
+      return {
+        isOpen: true,
+        lastPathname: action.pathname,
+      }
+  }
+}
+
 export interface LayoutProps {
-  location: string
+  location: { pathname: string }
 }
 
 const Layout: FunctionComponent<LayoutProps> = ({ children, location }) => {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const [{ isOpen, lastPathname }, _dispatch] = useReducer(drawerReducer, {
+    isOpen: false,
+    lastPathname: location.pathname,
+  })
 
-  const toggleDrawer = () => setIsDrawerOpen(open => !open)
-  const closeDrawer = () => setIsDrawerOpen(false)
+  const dispatch = (type: DrawerActionType) =>
+    _dispatch({ type, pathname: location.pathname })
 
-  const isHome = location === "/"
+  const toggleDrawer = () => dispatch("TOGGLE")
+  const closeDrawer = () => dispatch("CLOSE")
+  const navigateDrawer = () => dispatch("NAVIGATE")
+
+  // Navigation completed successfully. Hide drawer
+  if (lastPathname !== location.pathname) {
+    closeDrawer()
+  }
+
+  const { schoolType, schoolName } = useSiteMeta()
+  const showHeader = location.pathname === "/"
 
   return (
-    <StylesProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        <AppBar position="fixed">
-          <Toolbar>
-            <IconButton
-              edge="start"
-              className={styles.menuButton}
-              color="inherit"
-              onClick={toggleDrawer}
-              aria-label="Menu"
+    <ThemeProvider theme={theme}>
+      <AppBar position="fixed">
+        <Toolbar>
+          <IconButton
+            edge="start"
+            className={styles.menuButton}
+            color="inherit"
+            onClick={toggleDrawer}
+            aria-label="Menu"
+          >
+            <MenuIcon />
+          </IconButton>
+          {!showHeader && (
+            <Link to="/" className={styles.headerContainer + " " + styles.link}>
+              <Typography variant="h6" color="inherit">
+                {schoolType}&nbsp;
+              </Typography>
+              <Typography variant="h6" color="inherit">
+                "{schoolName}"
+              </Typography>
+            </Link>
+          )}
+        </Toolbar>
+      </AppBar>
+      <Drawer anchor="left" open={isOpen} onClose={closeDrawer}>
+        <Logo className={styles.logo} />
+        <List>
+          {MENUS.map(({ text, Icon, to }) => (
+            <ListItem
+              key={text}
+              button
+              component={Link}
+              to={to}
+              onClick={navigateDrawer}
+              selected={to === lastPathname}
             >
-              <MenuIcon />
-            </IconButton>
-            {!isHome && (
-              <div className={styles.headerContainer}>
-                <Typography variant="h6" color="inherit">
-                  Математическа Гимназия&nbsp;
-                </Typography>
-                <Typography variant="h6" color="inherit">
-                  &quot;Академик Кирил Попов&quot;
-                </Typography>
-              </div>
-            )}
-          </Toolbar>
-        </AppBar>
-        <Drawer anchor="left" open={isDrawerOpen} onClose={closeDrawer}>
-          <Logo className={styles.logo} />
-          <List>
-            {MENUS.map(({ text, Icon, pathname }) => (
-              <ListItem
-                key={text}
-                button
-                component={Link}
-                to={pathname}
-                onClick={closeDrawer}
-                selected={pathname === location}
+              <ListItemIcon>
+                <Icon />
+              </ListItemIcon>
+              <ListItemText
+                primaryTypographyProps={{
+                  className: styles.linkText,
+                  variant: "h5",
+                }}
               >
-                <ListItemIcon onClick={toggleDrawer}>
-                  <Icon />
-                </ListItemIcon>
-                <ListItemText
-                  primaryTypographyProps={{
-                    className: styles.linkText,
-                    variant: "h5",
-                  }}
-                >
-                  {text}
-                </ListItemText>
-              </ListItem>
-            ))}
-          </List>
-        </Drawer>
-        <div className={styles.children}>{children}</div>
-      </ThemeProvider>
-    </StylesProvider>
+                {text}
+              </ListItemText>
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+      <div className={styles.children}>{children}</div>
+    </ThemeProvider>
   )
 }
 

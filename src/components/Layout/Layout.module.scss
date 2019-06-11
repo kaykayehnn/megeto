@@ -9,6 +9,12 @@ $APPBAR_HEIGHT: 56px;
   flex-wrap: wrap;
 }
 
+@media screen and (max-width: 600px) {
+  .header-container {
+    display: block;
+  }
+}
+
 @media screen and (max-width: 360px) {
   .menu-button {
     margin-right: 0;
@@ -28,34 +34,10 @@ $APPBAR_HEIGHT: 56px;
 }
 
 .link-text {
-  // font-size: 0.8em;
   margin-right: 10px;
 }
 
 .children {
   // This offset needs to be padding to avoid margin collapsing
   padding-top: $APPBAR_HEIGHT;
-}
-// Global styles
-
-/* Removes margin */
-html,
-body {
-  margin: 0;
-}
-
-/* Overrides box-sizing */
-html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-body {
-  font-size: calc(16px + 6 * ((100vw - 320px) / 680));
-  font-family: "Roboto";
 }
