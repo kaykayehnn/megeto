@@ -9,6 +9,7 @@ import {
   TableCell,
   Paper,
   TableBody,
+  useMediaQuery,
 } from "@material-ui/core"
 
 import styles from "./Schedule.module.scss"
@@ -42,6 +43,8 @@ const Schedule: FunctionComponent<ScheduleProps> = props => {
   const scheduleObj = props.data.allScheduleJson.edges[dayIndex].node
   const columns = scheduleObj._0
 
+  const scrollableTabs = useMediaQuery("(max-width: 640px)")
+
   const schedule = [
     scheduleObj._1,
     scheduleObj._2,
@@ -58,45 +61,46 @@ const Schedule: FunctionComponent<ScheduleProps> = props => {
       <Helmet>
         <title>Програма</title>
       </Helmet>
-    <Content>
-      <Typography variant="h1">Програма</Typography>
-      <Tabs
-        value={dayIndex}
-        variant="fullWidth"
-        indicatorColor="primary"
-        onChange={(_event, newValue) => setDayIndex(newValue)}
-      >
-        {DAYS.map(d => (
-          <Tab key={d} label={d} />
-        ))}
-      </Tabs>
-      <Paper className={styles.table}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              {/* Column for subject indices */}
-              <TableCell className={styles.stickyCell} />
-              {columns.map(c => (
-                <TableCell key={c}>{c}</TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {schedule.map((daySchedule, ix) => (
-              <TableRow key={ix}>
-                {/* Subject index */}
-                <TableCell className={styles.stickyCell}>{ix + 1}</TableCell>
-                {columns.map((_, ix) => (
-                  <TableCell key={ix} className={styles.tableCell}>
-                      {daySchedule[ix]}
-                  </TableCell>
+      <Content>
+        <Typography variant="h1">Програма</Typography>
+        <Tabs
+          value={dayIndex}
+          variant={scrollableTabs ? "scrollable" : "fullWidth"}
+          scrollButtons={scrollableTabs ? "on" : "off"}
+          indicatorColor="primary"
+          onChange={(_event, newValue) => setDayIndex(newValue)}
+        >
+          {DAYS.map(d => (
+            <Tab key={d} label={d} />
+          ))}
+        </Tabs>
+        <Paper className={styles.table}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                {/* Column for subject indices */}
+                <TableCell className={styles.stickyCell} />
+                {columns.map(c => (
+                  <TableCell key={c}>{c}</TableCell>
                 ))}
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </Paper>
-    </Content>
+            </TableHead>
+            <TableBody>
+              {schedule.map((daySchedule, ix) => (
+                <TableRow key={ix}>
+                  {/* Subject index */}
+                  <TableCell className={styles.stickyCell}>{ix + 1}</TableCell>
+                  {columns.map((_, ix) => (
+                    <TableCell key={ix} className={styles.tableCell}>
+                      {daySchedule[ix]}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </Paper>
+      </Content>
     </>
   )
 }
