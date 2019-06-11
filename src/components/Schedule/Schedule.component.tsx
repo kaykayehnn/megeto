@@ -91,7 +91,7 @@ const Schedule: FunctionComponent<ScheduleProps> = props => {
                 <TableCell className={styles.stickyCell}>{ix + 1}</TableCell>
                 {columns.map((_, ix) => (
                   <TableCell key={ix} className={styles.tableCell}>
-                    {daySchedule[ix] || "-"}
+                      {daySchedule[ix]}
                   </TableCell>
                 ))}
               </TableRow>
