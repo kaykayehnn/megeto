@@ -15,8 +15,10 @@ import {
 import styles from "./Schedule.module.scss"
 import Content from "@Components/Content"
 import { Helmet } from "react-helmet"
+import useCollective from "@Hooks/useCollective"
 
 const DAYS = ["Понеделник", "Вторник", "Сряда", "Четвъртък", "Петък"]
+const teacherIdRgx = /^\d+/
 
 export interface ScheduleProps {
   data: {
@@ -44,6 +46,7 @@ const Schedule: FunctionComponent<ScheduleProps> = props => {
   const columns = scheduleObj._0
 
   const scrollableTabs = useMediaQuery("(max-width: 640px)")
+  const collective = useCollective()
 
   const schedule = [
     scheduleObj._1,
@@ -55,6 +58,15 @@ const Schedule: FunctionComponent<ScheduleProps> = props => {
     scheduleObj._7,
     scheduleObj._8,
   ]
+
+  const getSubject = (teacherId: string) => {
+    const match = collective.find(([_role, people]) =>
+      people.some(p => p.id === (teacherIdRgx.exec(teacherId) || [])[0])
+    )
+
+    if (match != null) return match[0]
+    return teacherId
+  }
 
   return (
     <>
@@ -94,7 +106,7 @@ const Schedule: FunctionComponent<ScheduleProps> = props => {
                   <TableCell className={styles.stickyCell}>{ix + 1}</TableCell>
                   {columns.map((_, ix) => (
                     <TableCell key={ix} className={styles.tableCell}>
-                      {daySchedule[ix]}
+                      {getSubject(daySchedule[ix])}
                     </TableCell>
                   ))}
                 </TableRow>
