@@ -42,6 +42,12 @@ module.exports = {
       },
     },
     "gatsby-transformer-json",
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-142035935-1",
+      },
+    },
     /*
      * Gatsby's data processing layer begins with “source”
      * plugins. Here the site sources its data from Wordpress.
