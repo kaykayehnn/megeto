@@ -1,18 +1,16 @@
-$CARD_MIN_WIDTH: 240px;
-
 .news-title {
   margin-bottom: 0.8em;
 }
 
 .news {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($CARD_MIN_WIDTH, auto));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-gap: 1em;
   flex-wrap: wrap;
   justify-items: center;
 }
 
 .card {
-  min-width: $CARD_MIN_WIDTH;
+  width: 100%;
   max-width: 400px;
 }

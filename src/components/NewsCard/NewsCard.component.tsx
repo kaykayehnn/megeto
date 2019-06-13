@@ -50,7 +50,6 @@ const NewsCard: FunctionComponent<NewsCardProps> = ({
         </Typography>
       </CardContent>
       <CardActions className={styles.actions}>
-        {/* TODO: align to bottom */}
         <Button
           component={Link}
           to={pathname}
