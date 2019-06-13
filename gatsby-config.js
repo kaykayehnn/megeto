@@ -74,7 +74,7 @@ module.exports = {
         auth: {
           wpcom_app_clientSecret: process.env.WORDPRESS_CLIENT_SECRET,
           wpcom_app_clientId: "65941",
-          wpcom_user: process.env.WORDPRESS_USER,
+          wpcom_user: "qwerty131131",
           wpcom_pass: process.env.WORDPRESS_PASSWORD,
         },
         normalizer: ({ entities }) => {
