@@ -50,7 +50,7 @@ export default function HTML(props) {
         <meta name="theme-color" content="#ffffff" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"
         />
         <title>Математическа Гимназия "Академик Кирил Попов"</title>
         {/* This procedure is a workaround to fix CSS injection order. */}
