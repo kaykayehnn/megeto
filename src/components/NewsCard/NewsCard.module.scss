@@ -1,15 +1,26 @@
-.card {
-  display: flex;
-  flex-direction: column;
+// This and NewsGrid.module.scss can be simplified to use grid by default
+@supports (grid-template-rows: subgrid) {
+  .card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-gap: 0;
+  }
 }
 
-.header {
-  // Height when title is 3 lines
-  min-height: 112px;
-}
+@supports not (grid-template-rows: subgrid) {
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
 
-.actions {
-  margin-top: auto;
+  .header {
+    // Height when title is 3 lines
+    min-height: 112px;
+  }
+
+  .actions {
+    margin-top: auto;
+  }
 }
 
 .read-more-button {

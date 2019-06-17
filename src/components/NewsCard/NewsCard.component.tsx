@@ -43,12 +43,14 @@ const NewsCard: FunctionComponent<NewsCardProps> = ({
         subheader={date}
         className={styles.header}
       />
-      <CardMedia className={styles.image} image={imageUrl} />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {excerpt}
-        </Typography>
-      </CardContent>
+      <div className={styles.cardContent}>
+        <CardMedia className={styles.image} image={imageUrl} />
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {excerpt}
+          </Typography>
+        </CardContent>
+      </div>
       <CardActions className={styles.actions}>
         <Button
           component={Link}

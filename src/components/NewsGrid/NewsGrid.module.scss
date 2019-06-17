@@ -9,7 +9,19 @@
   justify-items: center;
 }
 
-.card {
-  width: 100%;
-  max-width: 400px;
+@supports (grid-template-rows: subgrid) {
+  .news {
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .card {
+    grid-row-end: span 3;
+  }
+}
+
+@supports not (grid-template-rows: subgrid) {
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
 }
