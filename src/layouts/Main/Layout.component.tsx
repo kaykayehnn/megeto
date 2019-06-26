@@ -98,7 +98,7 @@ export interface DrawerAction {
 }
 
 // When a drawer link initiates navigation via Gatsby's Link component, it
-// needs some time to fetch its data. If the request resolves druing
+// needs some time to fetch its data. If the request resolves during
 // transitioning the drawer to a closed state, the Layout component rerenders
 // and thus the Transition component receives the following sequence of props:
 // 1) open (before clicking a link)
