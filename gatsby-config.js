@@ -93,7 +93,7 @@ module.exports = {
 
               e.title = e.title
                 .replace("&nbsp;", " ")
-                .replace(/&#822[01];/, '"')
+                .replace(/&#822[01];/g, '"')
 
               e.path = cyrillicToLatin(decodeURIComponent(e.path))
               e.slug = cyrillicToLatin(decodeURIComponent(e.slug))
