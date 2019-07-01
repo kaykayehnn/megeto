@@ -91,7 +91,10 @@ module.exports = {
                 .map(m => m.slice(3, -4))
               e.content = sanitizeHtml(e.content, { allowedTags: [] })
 
-              e.title = e.title.replace("&nbsp;", " ")
+              e.title = e.title
+                .replace("&nbsp;", " ")
+                .replace(/&#822[01];/, '"')
+
               e.path = cyrillicToLatin(decodeURIComponent(e.path))
               e.slug = cyrillicToLatin(decodeURIComponent(e.slug))
             }
