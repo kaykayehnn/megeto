@@ -1,3 +1,3 @@
-import WIP from "@Components/WIP"
+import About from "@Components/About"
 
-export default WIP
+export default About

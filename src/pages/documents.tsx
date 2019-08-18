@@ -1,3 +1,3 @@
-import WIP from "@Components/WIP"
+import Documents from "@Components/Documents"
 
-export default WIP
+export default Documents
