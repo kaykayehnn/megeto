@@ -48,10 +48,6 @@ export default function HTML(props) {
         <meta name="msapplication-TileColor" content="#ffc40d" />
         <meta name="msapplication-config" content="/icons/browserconfig.xml" />
         <meta name="theme-color" content="#ffffff" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"
-        />
         <title>Математическа Гимназия "Академик Кирил Попов"</title>
         {/* This procedure is a workaround to fix CSS injection order. */}
         {/* First are injected MUI styles, then custom ones. */}

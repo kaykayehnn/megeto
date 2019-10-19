@@ -14,7 +14,3 @@ html {
 *:after {
   box-sizing: inherit;
 }
-
-body {
-  font-family: "Roboto", sans-serif;
-}
