@@ -36,7 +36,7 @@ const NewsCard: FunctionComponent<NewsCardProps> = ({
   path: pathname,
 }) => {
   return (
-    <Card className={classnames(styles.card, className)}>
+    <Card component="article" className={classnames(styles.card, className)}>
       <CardHeader
         avatar={<Avatar src={avatarUrl} />}
         title={title}

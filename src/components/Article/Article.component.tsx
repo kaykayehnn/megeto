@@ -33,46 +33,44 @@ const Article: FunctionComponent<ArticleProps> = ({ data }) => {
         <meta name="description" content={post.excerpt} />
       </Helmet>
       <Content maxWidth="760px">
-        <article>
-          <Card>
-            <CardHeader
-              avatar={
-                <Avatar
-                  src={post.author.avatar_urls.wordpress_96}
-                  alt="Author"
-                  className={styles.avatar}
-                />
-              }
-              title={post.title}
-              titleTypographyProps={{
-                variant: "h3",
-                component: "h1",
-                gutterBottom: true,
-                className: styles.title,
-              }}
-              subheader={post.date}
-            />
-            <img
-              src={post.featured_media.source_url}
-              alt={post.featured_media.alt_text}
-              className={styles.image}
-            />
-            <CardContent>
-              {post.paragraphs.map(p => (
-                <Typography
-                  key={p}
-                  variant="body1"
-                  component="p"
-                  gutterBottom
-                  className={styles.paragraph}
-                >
-                  {p}
-                </Typography>
-              ))}
-            </CardContent>
-            <CardActions />
-          </Card>
-        </article>
+        <Card component="article">
+          <CardHeader
+            avatar={
+              <Avatar
+                src={post.author.avatar_urls.wordpress_96}
+                alt="Author"
+                className={styles.avatar}
+              />
+            }
+            title={post.title}
+            titleTypographyProps={{
+              variant: "h3",
+              component: "h1",
+              gutterBottom: true,
+              className: styles.title,
+            }}
+            subheader={post.date}
+          />
+          <img
+            src={post.featured_media.source_url}
+            alt={post.featured_media.alt_text}
+            className={styles.image}
+          />
+          <CardContent>
+            {post.paragraphs.map(p => (
+              <Typography
+                key={p}
+                variant="body1"
+                component="p"
+                gutterBottom
+                className={styles.paragraph}
+              >
+                {p}
+              </Typography>
+            ))}
+          </CardContent>
+          <CardActions />
+        </Card>
       </Content>
     </>
   )
