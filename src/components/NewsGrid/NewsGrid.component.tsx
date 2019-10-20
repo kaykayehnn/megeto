@@ -25,7 +25,9 @@ const NewsGrid: FunctionComponent<NewsProps> = ({ news }) => {
             excerpt={n.excerpt}
             path={n.path}
             imageUrl={n.featured_media.source_url}
+            imageAlt={n.featured_media.alt_text}
             avatarUrl={n.author.avatar_urls.wordpress_96}
+            avatarAlt={n.author.name}
             className={styles.card}
           />
         ))}
