@@ -9,9 +9,9 @@ export interface ContentProps {
 const Content: FunctionComponent<ContentProps> = ({ children, maxWidth }) => {
   return (
     <div className={styles.content}>
-      <div style={{ maxWidth }} className={styles.container}>
+      <main style={{ maxWidth }} className={styles.container}>
         {children}
-      </div>
+      </main>
     </div>
   )
 }

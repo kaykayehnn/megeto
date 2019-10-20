@@ -186,30 +186,32 @@ const Layout: FunctionComponent<LayoutProps> = ({ children, location }) => {
       </AppBar>
       <Drawer anchor="left" open={isOpen} onClose={closeDrawer}>
         <Logo className={styles.logo} />
-        <List>
-          {MENUS.map(({ text, Icon, to }) => (
-            <ListItem
-              key={text}
-              button
-              component={Link}
-              to={to}
-              onClick={navigateDrawer}
-              selected={to === lastPathname}
-            >
-              <ListItemIcon>
-                <Icon />
-              </ListItemIcon>
-              <ListItemText
-                primaryTypographyProps={{
-                  className: styles.linkText,
-                  variant: "h5",
-                }}
+        <nav>
+          <List>
+            {MENUS.map(({ text, Icon, to }) => (
+              <ListItem
+                key={text}
+                button
+                component={Link}
+                to={to}
+                onClick={navigateDrawer}
+                selected={to === lastPathname}
               >
-                {text}
-              </ListItemText>
-            </ListItem>
-          ))}
-        </List>
+                <ListItemIcon>
+                  <Icon />
+                </ListItemIcon>
+                <ListItemText
+                  primaryTypographyProps={{
+                    className: styles.linkText,
+                    variant: "h5",
+                  }}
+                >
+                  {text}
+                </ListItemText>
+              </ListItem>
+            ))}
+          </List>
+        </nav>
       </Drawer>
       <div className={styles.children}>{children}</div>
     </ThemeProvider>
