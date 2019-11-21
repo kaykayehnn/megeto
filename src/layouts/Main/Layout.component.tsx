@@ -161,7 +161,7 @@ const Layout: FunctionComponent<LayoutProps> = ({ children, location }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <AppBar position="fixed">
+      <AppBar position="sticky">
         <Toolbar>
           <IconButton
             edge="start"
@@ -213,7 +213,7 @@ const Layout: FunctionComponent<LayoutProps> = ({ children, location }) => {
           </List>
         </nav>
       </Drawer>
-      <div className={styles.children}>{children}</div>
+      <div>{children}</div>
     </ThemeProvider>
   )
 }

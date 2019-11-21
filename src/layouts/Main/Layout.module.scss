@@ -36,8 +36,3 @@ $APPBAR_HEIGHT: 56px;
 .link-text {
   margin-right: 10px;
 }
-
-.children {
-  // This offset needs to be padding to avoid margin collapsing
-  padding-top: $APPBAR_HEIGHT;
-}
