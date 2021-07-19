@@ -30,7 +30,7 @@
     "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-plugin-typescript": "^2.0.15",
     "gatsby-source-filesystem": "^2.0.39",
-    "gatsby-source-wordpress": "^3.0.64",
+    "gatsby-source-wordpress": "^4.0.8",
     "gatsby-transformer-json": "^2.1.11",
     "lodash-es": "^4.17.11",
     "node-sass": "^4.12.0",
